@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<style>
+		div {
+			text-align: center;
+		}
+		button.login {
+			background-color: limegreen;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		button.back {
+			background-color: grey;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		input {
+			margin: 5px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			box-shadow: 1px 1px 5px grey;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button class="login">로그인</button>
+	</div>
+	<div id="login-form" style="display: none;">
+		<form>
+			<label for="username">아이디:</label>
+			<input type="text" id="username" maxlength="9"><br>
+			<label for="password">비밀번호:</label>
+			<input type="password" id="password" maxlength="9"><br>
+			<button type="submit">로그인하기</button>
+			<button type="button" class="back">뒤로가기</button>
+		</form>
+	</div>
+	<script>
+		var loginBtn = document.querySelector(".login");
+		var loginForm = document.querySelector("#login-form");
+		var backBtn = document.querySelector(".back");
+
+		loginBtn.addEventListener("click", function() {
+			loginForm.style.display = "block";
+			loginBtn.style.display = "none";
+		});
+
+		backBtn.addEventListener("click", function() {
+			loginForm.style.display = "none";
+			loginBtn.style.display = "block";
+		});
+
+		var form = document.querySelector("form");
+	
